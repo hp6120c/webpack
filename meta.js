@@ -44,7 +44,7 @@ module.exports = {
       type: 'string',
       required: false,
       message: 'Project description',
-      default: 'A Vue.js project',
+      default: 'A Koala web project',
     },
     author: {
       when: 'isNotTest',
@@ -74,6 +74,48 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
+    //自定义部分
+    vuex:{
+      when: 'isNotTest',
+      type: "confirm",
+      message: "Install vuex?"
+    },
+    axios:{
+      when: 'isNotTest',
+      type: "confirm",
+      message: "Install vuex?"
+    },
+    
+    UIcomponent:{
+      when: 'isNotTest',
+      type: 'list',
+      message: 'Install elementUI or iview?',
+      choices: [
+        {
+          name: 'elementUI',
+          value: 'element',
+          short: 'element',
+        },
+        {
+          name:
+            'iview',
+          value: 'runtime',
+          short: 'runtime',
+        },
+        {
+          name:
+            'elementUI + iview',
+          value: 'bothUI',
+          short: 'bothUI',
+        },
+      ],
+    },
+    echarts:{
+      when: 'isNotTest',
+      type: "confirm",
+      message: "Install echarts?"
+    },
+    //==============================================================
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -101,38 +143,38 @@ module.exports = {
         },
       ],
     },
-    unit: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Set up unit tests',
-    },
-    runner: {
-      when: 'isNotTest && unit',
-      type: 'list',
-      message: 'Pick a test runner',
-      choices: [
-        {
-          name: 'Jest',
-          value: 'jest',
-          short: 'jest',
-        },
-        {
-          name: 'Karma and Mocha',
-          value: 'karma',
-          short: 'karma',
-        },
-        {
-          name: 'none (configure it yourself)',
-          value: 'noTest',
-          short: 'noTest',
-        },
-      ],
-    },
-    e2e: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
-    },
+    // unit: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Set up unit tests',
+    // },
+    // runner: {
+    //   when: 'isNotTest && unit',
+    //   type: 'list',
+    //   message: 'Pick a test runner',
+    //   choices: [
+    //     {
+    //       name: 'Jest',
+    //       value: 'jest',
+    //       short: 'jest',
+    //     },
+    //     {
+    //       name: 'Karma and Mocha',
+    //       value: 'karma',
+    //       short: 'karma',
+    //     },
+    //     {
+    //       name: 'none (configure it yourself)',
+    //       value: 'noTest',
+    //       short: 'noTest',
+    //     },
+    //   ],
+    // },
+    // e2e: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Setup e2e tests with Nightwatch?',
+    // },
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
@@ -160,15 +202,15 @@ module.exports = {
   filters: {
     '.eslintrc.js': 'lint',
     '.eslintignore': 'lint',
-    'config/test.env.js': 'unit || e2e',
-    'build/webpack.test.conf.js': "unit && runner === 'karma'",
-    'test/unit/**/*': 'unit',
-    'test/unit/index.js': "unit && runner === 'karma'",
-    'test/unit/jest.conf.js': "unit && runner === 'jest'",
-    'test/unit/karma.conf.js': "unit && runner === 'karma'",
-    'test/unit/specs/index.js': "unit && runner === 'karma'",
-    'test/unit/setup.js': "unit && runner === 'jest'",
-    'test/e2e/**/*': 'e2e',
+    // 'config/test.env.js': 'unit || e2e',
+    // 'build/webpack.test.conf.js': "unit && runner === 'karma'",
+    // 'test/unit/**/*': 'unit',
+    // 'test/unit/index.js': "unit && runner === 'karma'",
+    // 'test/unit/jest.conf.js': "unit && runner === 'jest'",
+    // 'test/unit/karma.conf.js': "unit && runner === 'karma'",
+    // 'test/unit/specs/index.js': "unit && runner === 'karma'",
+    // 'test/unit/setup.js': "unit && runner === 'jest'",
+    // 'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
   },
   complete: function(data, { chalk }) {
