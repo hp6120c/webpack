@@ -85,7 +85,11 @@ module.exports = {
     type: "confirm",
     message: "是否需要file-saver来保存文件（产品有下载功能时用）"
    },
-    
+    xlsx:{
+      when: 'isNotTest',
+      type: "confirm",
+      message: "是否需要安装xlsx来解析excel?"
+    },
     UIcomponent:{
       when: 'isNotTest',
       type: 'list',
