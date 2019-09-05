@@ -80,11 +80,11 @@ module.exports = {
       type: "confirm",
       message: "是否使用Vuex进行状态管理?"
     },
-    axios:{
-      when: 'isNotTest',
-      type: "confirm",
-      message: "是否使用 axios?"
-    },
+   fileSaver:{
+    when: 'isNotTest',
+    type: "confirm",
+    message: "是否需要file-saver来保存文件（产品有下载功能时用）"
+   },
     
     UIcomponent:{
       when: 'isNotTest',
@@ -114,6 +114,11 @@ module.exports = {
       when: 'isNotTest',
       type: "confirm",
       message: "是否安装 echarts?"
+    },
+    animate:{
+      when: 'isNotTest',
+      type: "confirm",
+      message: "是否需要添加animate.css动画?"
     },
     //==============================================================
     lint: {
@@ -212,6 +217,7 @@ module.exports = {
     // 'test/unit/setup.js': "unit && runner === 'jest'",
     // 'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/store/**/*': 'vuex',
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
