@@ -37,24 +37,24 @@ module.exports = {
       when: 'isNotTest',
       type: 'string',
       required: true,
-      message: 'Project name',
+      message: '项目名称',
     },
     description: {
       when: 'isNotTest',
       type: 'string',
       required: false,
-      message: 'Project description',
+      message: '项目描述',
       default: 'A Koala web project',
     },
     author: {
       when: 'isNotTest',
       type: 'string',
-      message: 'Author',
+      message: '作者',
     },
     build: {
       when: 'isNotTest',
       type: 'list',
-      message: 'Vue build',
+      message: '编译模式',
       choices: [
         {
           name: 'Runtime + Compiler: recommended for most users',
@@ -72,24 +72,24 @@ module.exports = {
     router: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Install vue-router?',
+      message: '是否安装 vue-router?',
     },
     //自定义部分
     vuex:{
       when: 'isNotTest',
       type: "confirm",
-      message: "Install vuex?"
+      message: "是否使用Vuex进行状态管理?"
     },
     axios:{
       when: 'isNotTest',
       type: "confirm",
-      message: "Install vuex?"
+      message: "是否使用 axios?"
     },
     
     UIcomponent:{
       when: 'isNotTest',
       type: 'list',
-      message: 'Install elementUI or iview?',
+      message: '请选择要使用的桌面UI框架',
       choices: [
         {
           name: 'elementUI',
@@ -113,18 +113,18 @@ module.exports = {
     echarts:{
       when: 'isNotTest',
       type: "confirm",
-      message: "Install echarts?"
+      message: "是否安装 echarts?"
     },
     //==============================================================
     lint: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Use ESLint to lint your code?',
+      message: '是否使用eslint规范代码?',
     },
     lintConfig: {
       when: 'isNotTest && lint',
       type: 'list',
-      message: 'Pick an ESLint preset',
+      message: '选择要使用的lint规范',
       choices: [
         {
           name: 'Standard (https://github.com/standard/standard)',
@@ -179,7 +179,7 @@ module.exports = {
       when: 'isNotTest',
       type: 'list',
       message:
-        'Should we run `npm install` for you after the project has been created? (recommended)',
+        '是否运行npm install在项目创建完毕后? (recommended)',
       choices: [
         {
           name: 'Yes, use NPM',
