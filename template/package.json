@@ -19,9 +19,9 @@
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
     {{#echarts}} "echarts": "^4.2.1",{{/echarts}}
-    {{#if_eq UIcomponent "element"||#if_eq UIcomponent "bothUI"}} "element-ui": "^2.10.1",  {{/if_eq}}
+    {{#if_eq UIcomponent "element"|| UIcomponent "bothUI"}} "element-ui": "^2.10.1",  {{/if_eq}}
     {{#fileSaver}} "file-saver": "^2.0.1",{{/fileSaver}}
-    {{#if_eq UIcomponent "iview"||#if_eq UIcomponent "bothUI"}} "iview": "^3.4.0",{{/if_eq}}
+    {{#if_eq UIcomponent "iview"|| UIcomponent "bothUI"}} "iview": "^3.4.0",{{/if_eq}}
     "script-loader": "^0.7.2",
     {{#vuex}} "vuex": "^3.1.0",{{/vuex}}
     {{#xlsx}} "xlsx": "^0.14.2"{{/xlsx}}
