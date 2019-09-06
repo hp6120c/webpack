@@ -106,12 +106,12 @@ module.exports = {
           value: 'iview',
           short: 'iview',
         },
-        {
-          name:
-            'elementUI + iview',
-          value: 'bothUI',
-          short: 'bothUI',
-        },
+        // {
+        //   name:
+        //     'elementUI + iview',
+        //   value: 'bothUI',
+        //   short: 'bothUI',
+        // },
       ],
     },
     echarts:{
