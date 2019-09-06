@@ -4,18 +4,39 @@
 {{/if_eq}}
 import Vue from 'vue'
 import App from './App'
-{{#router}}
+import http from './api.js'
 import router from './router'
-{{/router}}
-
+import axios from 'axios'
+{{#vuex}}
+import Vuex from 'vuex';
+import store from './store/store'
+{{/vuex}}
+{{#echarts}}
+import echarts from 'echarts'
+{{/echarts}}
+{{#if_eq UIcomponent "element"||#if_eq UIcomponent "bothUI"}}
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';{{/if_eq}}
+{{#if_eq UIcomponent "iview"||#if_eq UIcomponent "bothUI"}}
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';{{/if_eq}}
+{{#animate}} 
+import animated from 'animate.css'
+Vue.use(animated){{/animate}} 
+{{#vuex}}Vue.use(Vuex){{/vuex}}
+{{#if_eq UIcomponent "iview"||#if_eq UIcomponent "bothUI"}}Vue.use(iView);{{/if_eq}}
+{{#if_eq UIcomponent "element"||#if_eq UIcomponent "bothUI"}}Vue.use(ElementUI); {{/if_eq}}
+{{#echarts}}Vue.prototype.$echarts = echarts{{/echarts}}
+Vue.prototype.$http = http
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  {{#router}}
+
   router,
-  {{/router}}
+  {{#vuex}} store,{{/vuex}}
   {{#if_eq build "runtime"}}
   render: h => h(App)
   {{/if_eq}}

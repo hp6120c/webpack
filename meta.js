@@ -69,11 +69,11 @@ module.exports = {
         },
       ],
     },
-    router: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: '是否安装 vue-router?',
-    },
+    // router: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: '是否安装 vue-router?',
+    // },
     //自定义部分
     vuex:{
       when: 'isNotTest',
@@ -103,8 +103,8 @@ module.exports = {
         {
           name:
             'iview',
-          value: 'runtime',
-          short: 'runtime',
+          value: 'iview',
+          short: 'iview',
         },
         {
           name:
@@ -220,7 +220,7 @@ module.exports = {
     // 'test/unit/specs/index.js': "unit && runner === 'karma'",
     // 'test/unit/setup.js': "unit && runner === 'jest'",
     // 'test/e2e/**/*': 'e2e',
-    'src/router/**/*': 'router',
+    // 'src/router/**/*': 'router',
     'src/store/**/*': 'vuex',
   },
   complete: function(data, { chalk }) {
