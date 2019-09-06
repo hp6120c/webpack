@@ -8,14 +8,14 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     {{#lint}}
-    "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
-    {{/lint}}
+    "lint": "eslint --ext .js,.vue src",{{/lint}}
     "build": "node build/build.js"
   },
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    {{#animate}} "animate.css": "^3.7.2",{{/animate}}
+    {{#animate}}
+     "animate.css": "^3.7.2",{{/animate}}
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
     {{#echarts}} "echarts": "^4.2.1",{{/echarts}}
