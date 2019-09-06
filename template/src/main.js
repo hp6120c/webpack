@@ -14,18 +14,18 @@ import store from './store/store'
 {{#echarts}}
 import echarts from 'echarts'
 {{/echarts}}
-{{#if_eq UIcomponent "element"|| "bothUI"}}
+{{#if_or UIcomponent "element" "bothUI"}}
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';{{/if_eq}}
-{{#if_eq UIcomponent "iview"||  "bothUI"}}
+import 'element-ui/lib/theme-chalk/index.css';{{/if_or}}
+{{#if_or UIcomponent "iview"||  "bothUI"}}
 import iView from 'iview';
-import 'iview/dist/styles/iview.css';{{/if_eq}}
+import 'iview/dist/styles/iview.css';{{/if_or}}
 {{#animate}} 
 import animated from 'animate.css'
 Vue.use(animated){{/animate}} 
 {{#vuex}}Vue.use(Vuex){{/vuex}}
-{{#if_eq UIcomponent "iview"||  "bothUI"}}Vue.use(iView);{{/if_eq}}
-{{#if_eq UIcomponent "element"||  "bothUI"}}Vue.use(ElementUI); {{/if_eq}}
+{{#if_or UIcomponent "iview"||  "bothUI"}}Vue.use(iView);{{/if_or}}
+{{#if_or UIcomponent "element"||  "bothUI"}}Vue.use(ElementUI); {{/if_or}}
 {{#echarts}}Vue.prototype.$echarts = echarts{{/echarts}}
 Vue.prototype.$http = http
 Vue.prototype.$axios = axios
