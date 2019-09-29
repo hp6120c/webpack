@@ -4,7 +4,7 @@
 {{/if_eq}}
 import Vue from 'vue'
 import App from './App'
-import http from './api.js'
+import http from './api/api.js'
 import router from './router'
 import axios from 'axios'
 {{#vuex}}
