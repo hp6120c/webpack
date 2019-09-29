@@ -22,9 +22,9 @@
     {{#if_eq UIcomponent "element"}} "element-ui": "^2.10.1",  {{/if_eq}}
     {{#fileSaver}} "file-saver": "^2.0.1",{{/fileSaver}}
     {{#if_eq UIcomponent "iview"}} "iview": "^3.4.0",{{/if_eq}}
-    "script-loader": "^0.7.2",
-    {{#vuex}} "vuex": "^3.1.0",{{/vuex}}
-    {{#xlsx}} "xlsx": "^0.14.2"{{/xlsx}}
+    "script-loader": "^0.7.2" {{#vuex}},
+    "vuex": "^3.1.0"{{/vuex}}
+    {{#xlsx}} ,"xlsx": "^0.14.2"{{/xlsx}}
   },
   "devDependencies": {
     {{#lint}}
